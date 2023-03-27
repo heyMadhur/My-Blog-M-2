@@ -1,0 +1,72 @@
+/* Profile Pic and Name */
+
+.MainClass{
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Heading{
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  padding: 2rem;
+}
+.Heading h1{
+  font-size:2.5rem;
+  margin-bottom: 1rem;
+}
+.Heading p{
+  font-size: 1.2rem;
+}
+.myImg{
+  border-radius: 6rem; 
+  margin: 1rem;
+  height: auto;
+  width: 12rem;
+}
+
+/* Blogs Section */
+
+.blogs{
+  /* background-color: greenyellow; */
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  /* align-items: center; */
+  width: 100vw;
+  padding: 2rem;
+}
+
+.blogs h2{
+  /* background-color: white; */
+  font-size: 3rem;
+  text-align: center;
+
+}
+
+.blogItems{
+  /* background-color: sandybrown; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  margin: 1rem 28rem;
+  
+}
+
+.blogItems h3{
+  font-size: 1.5rem;
+  margin: 12px 0;
+}
+.blogItems p{
+  font-size: 1.2rem;
+}
+
+
+
