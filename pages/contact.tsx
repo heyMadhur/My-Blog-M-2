@@ -15,8 +15,8 @@ const Contact = () => {
     }
 
     // Age Checker
-    if (age.length > 3 || parseInt(age) > 110) {
-      alert("Invalid Age");
+    if (age.length > 3 || parseInt(age) > 110 ||parseInt(age)<11) {
+      alert("Invalid Age \nMin Age is 10");
       return false;
     }
 
@@ -72,7 +72,6 @@ const Contact = () => {
   const handleChange = (e: {
     target: { id: string; value: React.SetStateAction<string> };
   }) => {
-    console.log(typeof e);
     if (e.target.id === "name") {
       setName(e.target.value);
     } else if (e.target.id === "email") {
