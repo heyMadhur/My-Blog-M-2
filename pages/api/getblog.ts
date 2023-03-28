@@ -14,14 +14,14 @@ export default function handler(
 ) {
 
 
-fs.readFile(`blogdata/${req.query.slug}`, 'utf-8', (err, data)=>{
-  if(err){
-    const response: Data= {error: "Blog not Found"};
-    res.status(500).json(response);
-  }
-  // console.log(data);
-  res.status(200).json(JSON.parse(data))
-})
+  fs.readFile(`blogdata/${req.query.slug}`, 'utf-8', (err, data)=>{
+    if(err){
+      const response: Data= {error: "Blog not Found"};
+      res.status(500).json(response);
+    }
+    // console.log(data);
+    res.status(200).json(JSON.parse(data))
+  })
   
 
 }

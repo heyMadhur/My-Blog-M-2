@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/Blog.module.css";
 import Link from "next/link";
+import * as fs from 'fs';
 
 interface itemDataType {
   title: string;
@@ -38,9 +39,19 @@ const Blog: React.FC<MyProps> = ({ allBlogs }) => {
   );
 };
 
-export async function getServerSideProps(context: object) {
-  const data: Response = await fetch("http://localhost:3000/api/blogs");
-  const allBlogs = await data.json();
+export async function getStaticProps(context: object) {
+
+  const allBlogs:string[]=[];
+
+  const data= await fs.promises.readdir(`blogdata`, 'utf-8');
+  data.forEach((file)=>{
+    const fileData= fs.readFileSync(`blogdata/${file}`, 'utf-8');
+    allBlogs.push(JSON.parse(fileData));
+  });
+  
+
+  // const data: Response = await fetch("http://localhost:3000/api/blogs");
+  // const allBlogs = await data.json();
 
   return {
     props: { allBlogs }, // will be passed to the page component as props
