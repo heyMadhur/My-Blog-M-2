@@ -11,12 +11,16 @@ interface blogDataType {
 }
 const slug = ({blog}:{blog:blogDataType}) => {
 
+  function createMarkup(c: string) {
+    return {__html: c};
+  }
+
   return (
     <div>
       <h1>{blog && blog.title}</h1>
       <h4>By- {blog && blog.author}</h4>
       <hr />
-      <div>{blog && blog.content}</div>
+      <div dangerouslySetInnerHTML={createMarkup(blog.content)}></div>
     </div>
   );
 };
