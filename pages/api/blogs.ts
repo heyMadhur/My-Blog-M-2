@@ -11,7 +11,11 @@ export default async function handler(
   
   const allFilesData:string[]=[];
 
-  const data= await fs.promises.readdir(`blogdata`, 'utf-8');
+  let data= await fs.promises.readdir(`blogdata`, 'utf-8');
+  // let count: number = (Number.isInteger(req.query.count))? parseInt(req.query.count) : 0;
+  let count: string| undefined | string[]= req.query.count;
+
+  data= data.slice(0, parseInt(count));
   data.forEach((file)=>{
     const fileData= fs.readFileSync(`blogdata/${file}`, 'utf-8');
     allFilesData.push(JSON.parse(fileData));
