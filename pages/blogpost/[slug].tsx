@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import * as fs from "fs";
 
 interface blogDataType {
@@ -14,12 +15,17 @@ const slug = ({ blog }: { blog: blogDataType }) => {
   }
 
   return (
+    <>
+    <Head>
+      <title>{blog && blog.title}</title>
+    </Head>
     <div>
       <h1>{blog && blog.title}</h1>
       <h4>By- {blog && blog.author}</h4>
       <hr />
       <div dangerouslySetInnerHTML={createMarkup(blog.content)}></div>
     </div>
+    </>
   );
 };
 

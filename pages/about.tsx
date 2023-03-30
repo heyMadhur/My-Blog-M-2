@@ -1,8 +1,12 @@
 import React from "react";
+import Head from "next/head";
 
 const About = () => {
   return (
     <>
+    <Head>
+      <title>About</title>
+    </Head>
       <h1>About Blogger&apos;s Blog</h1>
       <div>
         <h2>Introduction</h2>

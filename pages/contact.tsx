@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Head from "next/head";
 
 const Contact = () => {
   const [name, setName] = useState<string>("");
@@ -84,60 +85,65 @@ const Contact = () => {
   };
 
   return (
-    <div className="container">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="fname">Name: </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={name}
-          onChange={handleChange}
-          placeholder="Your Name.."
-        />
+    <>
+    <Head>
+      <title>Contact</title>
+    </Head>
+      <div className="container">
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="fname">Name: </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={name}
+            onChange={handleChange}
+            placeholder="Your Name.."
+          />
 
-        <label htmlFor="age">Age: </label>
-        <input
-          type="number"
-          id="age"
-          name="age"
-          value={age}
-          onChange={handleChange}
-          placeholder="Your Age.."
-        />
+          <label htmlFor="age">Age: </label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            value={age}
+            onChange={handleChange}
+            placeholder="Your Age.."
+          />
 
-        <label htmlFor="country">Email: </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={email}
-          onChange={handleChange}
-          placeholder="Your Email.."
-        />
+          <label htmlFor="country">Email: </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={handleChange}
+            placeholder="Your Email.."
+          />
 
-        <label htmlFor="age">Contact No: </label>
-        <input
-          type="number"
-          id="phone"
-          name="phone"
-          value={number}
-          onChange={handleChange}
-          placeholder="Your Number.."
-        />
+          <label htmlFor="age">Contact No: </label>
+          <input
+            type="number"
+            id="phone"
+            name="phone"
+            value={number}
+            onChange={handleChange}
+            placeholder="Your Number.."
+          />
 
-        <label htmlFor="desc">Want to tell Something</label>
-        <textarea
-          id="desc"
-          name="desc"
-          value={desc}
-          onChange={handleChange}
-          placeholder="Write something.."
-        ></textarea>
+          <label htmlFor="desc">Want to tell Something</label>
+          <textarea
+            id="desc"
+            name="desc"
+            value={desc}
+            onChange={handleChange}
+            placeholder="Write something.."
+          ></textarea>
 
-        <input type="submit" value="Submit" />
-      </form>
-    </div>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    </>
   );
 };
 

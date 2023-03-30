@@ -3,6 +3,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import styles from "../styles/Blog.module.css";
 import Link from "next/link";
 import * as fs from "fs";
+import Head from "next/head";
 
 interface itemDataType {
   title: string;
@@ -21,10 +22,6 @@ const Blog: React.FC<MyProps> = ({ allBlogs, totalBlogs }) => {
   const [count, setCount] = useState(allBlogs.length);
 
   const fetchMoreData = async () => {
-    // if (this.state.items.length >= 500) {
-    //   this.setState({ hasMore: false });
-    //   return;
-    // }
     const d: Response = await fetch(
       `http://localhost:3000/api/blogs/?count=${count + 2}`
     );
@@ -35,6 +32,9 @@ const Blog: React.FC<MyProps> = ({ allBlogs, totalBlogs }) => {
 
   return (
     <>
+    <Head>
+      <title>Blogs</title>
+    </Head>
       <div className={styles.blogs}>
         <h2>Popular Blogs</h2>
 
