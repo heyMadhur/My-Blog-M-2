@@ -3,7 +3,7 @@ import React from 'react'
 const About = () => {
   return (
     <>
-      <h1>About Blogger's Blog</h1> 
+      <h1>About Blogger&apos;s Blog</h1> 
       <div>
       <h2>Introduction</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aliquam exercitationem sint cupiditate labore tempora temporibus perferendis soluta, porro vero saepe neque, dolor fugit? Reiciendis consectetur ex officia, sit eveniet quia, hic fuga ea omnis eos voluptatem alias adipisci non laborum soluta saepe consequuntur. Vero nihil quibusdam voluptates ullam assumenda dicta sit laboriosam harum facilis quia doloribus illum pariatur recusandae sapiente sint, sed expedita! Totam labore debitis fugit nostrum dolor molestias quidem quo reiciendis illo quasi maxime placeat accusantium error quae dolorum exercitationem veniam autem nihil, saepe in enim officiis iste voluptatibus! Commodi placeat laudantium nesciunt laboriosam, culpa quos deserunt!</p>
