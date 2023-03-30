@@ -26,11 +26,14 @@ const slug = ({blog}:{blog:blogDataType}) => {
 };
 
 export async function getStaticPaths() {
+
+  let allBlogs= await fs.promises.readdir(`blogdata/`);
+  let allBlogsPath= allBlogs.map((item)=>{
+    return { params: { slug: item.split('.')[0] } }
+  })
+  
   return {
-    paths: [{ params: { slug: 'how-to-become-pro-coder' } },
-     { params: { slug: 'how-to-become-self-made-millionare' } },
-     { params: { slug: 'how-to-have-clear-thoughts' } },
-    ],
+    paths: allBlogsPath,
     fallback: false, // can also be true or 'blocking'
   }
 }
