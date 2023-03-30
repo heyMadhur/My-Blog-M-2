@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import * as fs from 'fs';
+import React from "react";
+import * as fs from "fs";
 
 interface blogDataType {
   title: string;
@@ -9,10 +8,9 @@ interface blogDataType {
   slug: string;
   "short-line": string;
 }
-const slug = ({blog}:{blog:blogDataType}) => {
-
+const slug = ({ blog }: { blog: blogDataType }) => {
   function createMarkup(c: string) {
-    return {__html: c};
+    return { __html: c };
   }
 
   return (
@@ -26,27 +24,30 @@ const slug = ({blog}:{blog:blogDataType}) => {
 };
 
 export async function getStaticPaths() {
+  let allBlogs = await fs.promises.readdir(`blogdata/`);
+  let allBlogsPath = allBlogs.map((item) => {
+    return { params: { slug: item.split(".")[0] } };
+  });
 
-  let allBlogs= await fs.promises.readdir(`blogdata/`);
-  let allBlogsPath= allBlogs.map((item)=>{
-    return { params: { slug: item.split('.')[0] } }
-  })
-  
   return {
     paths: allBlogsPath,
     fallback: false, // can also be true or 'blocking'
-  }
+  };
 }
 
-export async function getStaticProps(context: { params: { slug: string; }; }) {
-  const {slug}= context.params;
-  console.log(slug)
+export async function getStaticProps(context: { params: { slug: string } }) {
+  const { slug } = context.params;
 
-  const data:string= await fs.promises.readFile(`blogdata/${slug}.json`, 'utf-8');
-  const blog= JSON.parse(data);
+  const data: string = await fs.promises.readFile(
+    `blogdata/${slug}.json`,
+    "utf-8"
+  );
+  const blog = JSON.parse(data);
+
+  // For ServerSide Rendering
   // const data: Response = await fetch(`http://localhost:3000/api/getblog?slug=${slug}.json`)
   // const blog = await data.json();
-
+  // Also change getStaticProps to getServerSideProps
 
   return {
     props: { blog },

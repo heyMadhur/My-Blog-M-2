@@ -15,7 +15,7 @@ const Contact = () => {
     }
 
     // Age Checker
-    if (age.length > 3 || parseInt(age) > 110 ||parseInt(age)<11) {
+    if (age.length > 3 || parseInt(age) > 110 || parseInt(age) < 11) {
       alert("Invalid Age \nMin Age is 10");
       return false;
     }
@@ -48,8 +48,6 @@ const Contact = () => {
 
       // Send data to the backend via POST
       fetch("http://localhost:3000/api/postcontact/", {
-        // Enter your IP address here
-
         method: "POST",
         mode: "cors",
         body: JSON.stringify(jsonData), // body data type must match "Content-Type" header
