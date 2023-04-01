@@ -6,8 +6,8 @@ const Navbar = () => {
     <div>
       <style jsx global>
         {`
-          .text-font{
-            font-family: 'Prompt', sans-serif;
+          .text-font {
+            font-family: "Prompt", sans-serif;
           }
           .mainNav ul {
             display: flex;
@@ -19,9 +19,20 @@ const Navbar = () => {
             margin: 1rem 2rem;
             font-size: 26px;
           }
-          .mainNav ul li:hover{
+          .mainNav ul li:hover {
             text-decoration: underline;
-
+          }
+          @media screen and (max-width: 600px) {
+            .mainNav ul li {
+              margin: 1rem 1.2rem;
+              font-size: 20px;
+            }
+          }
+          @media screen and (max-width: 280px) {
+            .mainNav ul li {
+              margin: 0.5rem 1rem;
+              font-size: 14px;
+            }
           }
         `}
       </style>

@@ -10,4 +10,27 @@
     margin: 5px 0px;
 }
 
+/* Responsiveness */
+
+@media screen and (max-width: 1400px) {
+  .container{
+    width: 50vw;
+  }
+}
+@media screen and (max-width: 900px) {
+  .container{
+    width: 70vw;
+  }
+}
+@media screen and (max-width: 500px) {
+  .container{
+    width: 80vw;
+  }
+  .container h1{
+    font-size: 1.5rem;
+  }
+  .container h4{
+    font-size: 0.8rem;
+  }
+}
 

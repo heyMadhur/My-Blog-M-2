@@ -40,6 +40,7 @@ const Blog: React.FC<MyProps> = ({ allBlogs, totalBlogs }) => {
         <h2 className={utilStyles.headFont}>Popular Blogs</h2>
 
         <InfiniteScroll
+        className={styles.blogsContainer}
           dataLength={blogs.length} //This is important field to render the next data
           next={fetchMoreData}
           hasMore={totalBlogs !== blogs.length}

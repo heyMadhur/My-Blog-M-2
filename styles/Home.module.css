@@ -39,7 +39,7 @@
   flex-direction: column;
   justify-content: center; */
   /* align-items: center; */
-  width: 100vw;
+  /* width: 100vw; */
   padding: 2rem;
 }
 
@@ -56,7 +56,7 @@
   flex-direction: column;
   justify-content: center;
   /* align-items: center; */
-  margin: 1rem 28rem;
+  margin: 1rem;
   
 }
 
@@ -68,5 +68,35 @@
   font-size: 1.2rem;
 }
 
+/* Responsiveness */
+@media screen and (max-width: 600px) {
+  .myImg{
+    width: 10rem;
+  }
+  .Heading{
+    padding: 1rem;
+  }
+  .Heading h1{
+    font-size: 2rem;
+  }
+  .Heading p{
+    font-size: 1rem;
+  }
+  .blogs{
+    padding: 1rem;
+  }
+  .blogs h2{
+    font-size: 2.5rem;
+  }
+  .blogItems{
+    margin: 1rem 0rem;
+  }
+  .blogItems h3{
+    font-size: 1.2rem;
+  }
+  .blogItems p{
+    font-size: 1rem;
+  }
+}
 
 
