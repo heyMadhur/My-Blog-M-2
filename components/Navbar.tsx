@@ -6,6 +6,9 @@ const Navbar = () => {
     <div>
       <style jsx global>
         {`
+          .text-font{
+            font-family: 'Prompt', sans-serif;
+          }
           .mainNav ul {
             display: flex;
             justify-content: center;
@@ -23,22 +26,22 @@ const Navbar = () => {
         <ul>
           <Link href="/" legacyBehavior>
             <a>
-              <li>Home</li>
+              <li className="text-font">Home</li>
             </a>
           </Link>
           <Link href="/about" legacyBehavior>
             <a>
-              <li>About</li>
+              <li className="text-font">About</li>
             </a>
           </Link>
           <Link href="/blog" legacyBehavior>
             <a>
-              <li>Blog</li>
+              <li className="text-font">Blog</li>
             </a>
           </Link>
           <Link href="/contact" legacyBehavior>
             <a>
-              <li>Contact</li>
+              <li className="text-font">Contact</li>
             </a>
           </Link>
         </ul>

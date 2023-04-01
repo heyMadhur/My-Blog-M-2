@@ -4,6 +4,7 @@ import styles from "../styles/Blog.module.css";
 import Link from "next/link";
 import * as fs from "fs";
 import Head from "next/head";
+import utilStyles from "styles/Utilities.module.css";
 
 interface itemDataType {
   title: string;
@@ -36,7 +37,7 @@ const Blog: React.FC<MyProps> = ({ allBlogs, totalBlogs }) => {
       <title>Blogs</title>
     </Head>
       <div className={styles.blogs}>
-        <h2>Popular Blogs</h2>
+        <h2 className={utilStyles.headFont}>Popular Blogs</h2>
 
         <InfiniteScroll
           dataLength={blogs.length} //This is important field to render the next data
@@ -53,9 +54,9 @@ const Blog: React.FC<MyProps> = ({ allBlogs, totalBlogs }) => {
             return (
               <div className={styles.blogItems} key={idx}>
                 <Link href={`./blogpost/${item.slug}`}>
-                  <h3>{item.title}</h3>
-                  <h4>By- {item.author}</h4>
-                  <p>{item["short-line"]}</p>
+                  <h3 className={utilStyles.subHeadFont}><u>{item.title}</u></h3>
+                  <h4 className={utilStyles.subHeadFont}>By- {item.author}</h4>
+                  <p className={utilStyles.textFont}>{item["short-line"]}</p>
                 </Link>
               </div>
             );

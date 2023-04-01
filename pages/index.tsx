@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import utilStyles from "@/styles/Utilities.module.css";
 import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,29 +19,29 @@ const Home: React.FC= () => {
       <main className={styles.MainClass}>
         <div className={styles.Heading}>
           <img src='/MyPhoto.jpeg' alt="Profile Pic" width={100} height={100} className={styles.myImg}></img>
-          <h1>Madhur Gupta</h1>
-          <p>
+          <h1 className={utilStyles.headFont}>Madhur Gupta</h1>
+          <p className={utilStyles.textFont}>
             Hey there! I am Madhur Gupta. I am a Pro Level Developer +
             Billionare + Philanthropist and much more!!!
           </p>
         </div>
 
         <div className={styles.blogs}>
-          <h2>Popular Blogs</h2>
+          <h2 className={utilStyles.headFont}>Popular Blogs</h2>
           <div className={styles.blogItems}>
-            <h3>How to have Clear Thoughts</h3>
-            <p>
+            <h3 className={utilStyles.headFont}>How to have Clear Thoughts</h3>
+            <p className={utilStyles.textFont}>
               Stop Consuming Motivation!!&nbsp; Start Doing Meditation... Follow
               Discipline
             </p>
           </div>
           <div className={styles.blogItems}>
-            <h3>How to Become Self Made Millionare</h3>
-            <p>Go and start working on any project you find....</p>
+            <h3 className={utilStyles.headFont}>How to Become Self Made Millionare</h3>
+            <p className={utilStyles.textFont}>Go and start working on any project you find....</p>
           </div>
           <div className={styles.blogItems}>
-            <h3>How to Become Pro Coder</h3>
-            <p>Practice DSA and make projects</p>
+            <h3 className={utilStyles.headFont}>How to Become Pro Coder</h3>
+            <p className={utilStyles.textFont}>Practice DSA and make projects</p>
           </div>
         </div>
       </main>

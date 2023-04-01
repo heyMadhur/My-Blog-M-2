@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
+import utilStyles from "@/styles/Utilities.module.css";
+import styles from "@/styles/Contact.module.css";
 
 const Contact = () => {
   const [name, setName] = useState<string>("");
@@ -86,13 +88,17 @@ const Contact = () => {
 
   return (
     <>
-    <Head>
-      <title>Contact</title>
-    </Head>
-      <div className="container">
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="fname">Name: </label>
+      <Head>
+        <title>Contact</title>
+      </Head>
+      <form className={styles.formContainer} onSubmit={handleSubmit}>
+        <h1 className={`${utilStyles.headFont} ${styles.contactHeading}`}>Contact Us</h1>
+        <div className={styles.field}>
+          <label className={utilStyles.headFont} htmlFor="fname">
+            Name:{" "}
+          </label>
           <input
+            className={`${utilStyles.textFont} ${styles.inputTag}`}
             type="text"
             id="name"
             name="name"
@@ -100,9 +106,13 @@ const Contact = () => {
             onChange={handleChange}
             placeholder="Your Name.."
           />
-
-          <label htmlFor="age">Age: </label>
+        </div>
+        <div className={styles.field}>
+          <label className={utilStyles.headFont} htmlFor="age">
+            Age:{" "}
+          </label>
           <input
+            className={`${utilStyles.textFont} ${styles.inputTag}`}
             type="number"
             id="age"
             name="age"
@@ -110,9 +120,13 @@ const Contact = () => {
             onChange={handleChange}
             placeholder="Your Age.."
           />
-
-          <label htmlFor="country">Email: </label>
+        </div>
+        <div className={styles.field}>
+          <label className={utilStyles.headFont} htmlFor="country">
+            Email:{" "}
+          </label>
           <input
+            className={`${utilStyles.textFont} ${styles.inputTag}`}
             type="email"
             id="email"
             name="email"
@@ -120,9 +134,14 @@ const Contact = () => {
             onChange={handleChange}
             placeholder="Your Email.."
           />
+        </div>
 
-          <label htmlFor="age">Contact No: </label>
+        <div className={styles.field}>
+          <label className={utilStyles.headFont} htmlFor="age">
+            Contact No:{" "}
+          </label>
           <input
+            className={`${utilStyles.textFont} ${styles.inputTag}`}
             type="number"
             id="phone"
             name="phone"
@@ -130,19 +149,23 @@ const Contact = () => {
             onChange={handleChange}
             placeholder="Your Number.."
           />
-
-          <label htmlFor="desc">Want to tell Something</label>
+        </div>
+        <div className={styles.field}>
+          <label className={utilStyles.headFont} htmlFor="desc">
+            Want to tell Something:{" "}
+          </label>
           <textarea
+            className={`${utilStyles.textFont} ${styles.inputTag}`}
             id="desc"
             name="desc"
             value={desc}
             onChange={handleChange}
             placeholder="Write something.."
           ></textarea>
+        </div>
 
-          <input type="submit" value="Submit" />
-        </form>
-      </div>
+        <input className={styles.btn} type="submit" value="Submit" />
+      </form>
     </>
   );
 };

@@ -1,35 +1,28 @@
 /* Blogs Section */
 
-.blogs{
-    /* background-color: greenyellow; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
-    /* align-items: center; */
-    width: 100vw;
-    padding: 2rem;
-  }
   
   .blogs h2{
-    /* background-color: white; */
     font-size: 3rem;
     text-align: center;
   
   }
   
   .blogItems{
-    /* background-color: sandybrown; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     /* align-items: center; */
-    margin: 1rem 28rem;
+    border: 2px solid black;
+    margin: 1rem 20rem;
+    padding: 1rem ;
     
   }
   
   .blogItems h3{
     font-size: 1.5rem;
-    margin: 12px 0;
+  }
+  .blogItems h4{
+    margin-bottom: 10px;
   }
   .blogItems p{
     font-size: 1.2rem;
