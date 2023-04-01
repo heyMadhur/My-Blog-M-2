@@ -2,7 +2,7 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import utilStyles from "@/styles/Utilities.module.css";
-import Link from "next/link";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +18,7 @@ const Home: React.FC= () => {
 
       <main className={styles.MainClass}>
         <div className={styles.Heading}>
-          <img src='/MyPhoto.jpeg' alt="Profile Pic" width={100} height={100} className={styles.myImg}></img>
+          <Image src='/MyPhoto.jpeg' alt="Profile Pic" width={100} height={100} className={styles.myImg}></Image>
           <h1 className={utilStyles.headFont}>Madhur Gupta</h1>
           <p className={utilStyles.textFont}>
             Hey there! I am Madhur Gupta. I am a Pro Level Developer +
