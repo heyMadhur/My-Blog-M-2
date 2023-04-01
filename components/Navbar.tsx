@@ -19,6 +19,10 @@ const Navbar = () => {
             margin: 1rem 2rem;
             font-size: 26px;
           }
+          .mainNav ul li:hover{
+            text-decoration: underline;
+
+          }
         `}
       </style>
 

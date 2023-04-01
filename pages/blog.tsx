@@ -75,7 +75,7 @@ export async function getStaticProps(context: object) {
   var count = 0;
   data.forEach((file) => {
     count++;
-    if (count >= 8) {
+    if (count >= 6) {
       return false;
     }
     const fileData = fs.readFileSync(`blogdata/${file}`, "utf-8");

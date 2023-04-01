@@ -1,6 +1,8 @@
 import React from "react";
 import Head from "next/head";
 import * as fs from "fs";
+import styles from '@/styles/Blogpost.module.css'
+import utilStyles from "@/styles/Utilities.module.css";
 
 interface blogDataType {
   title: string;
@@ -19,11 +21,13 @@ const slug = ({ blog }: { blog: blogDataType }) => {
     <Head>
       <title>{blog && blog.title}</title>
     </Head>
-    <div>
-      <h1>{blog && blog.title}</h1>
-      <h4>By- {blog && blog.author}</h4>
+    <div className={styles.container}>
+      <h1 className={utilStyles.headFont}>{blog && blog.title}</h1>
+      <h4 className={utilStyles.headFont}>By- {blog && blog.author}</h4>
+      <br />
       <hr />
-      <div dangerouslySetInnerHTML={createMarkup(blog.content)}></div>
+      <br />
+      <div className={styles.content} dangerouslySetInnerHTML={createMarkup(blog.content)}></div>
     </div>
     </>
   );
