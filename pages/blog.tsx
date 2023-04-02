@@ -33,9 +33,9 @@ const Blog: React.FC<MyProps> = ({ allBlogs, totalBlogs }) => {
 
   return (
     <>
-    <Head>
+    {/* <Head>
       <title>Blogs</title>
-    </Head>
+    </Head> */}
       <div className={styles.blogs}>
         <h2 className={utilStyles.headFont}>Popular Blogs</h2>
 
