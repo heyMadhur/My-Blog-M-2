@@ -23,8 +23,11 @@ const Blog: React.FC<MyProps> = ({ allBlogs, totalBlogs }) => {
   const [count, setCount] = useState(allBlogs.length);
 
   const fetchMoreData = async () => {
+    // const d: Response = await fetch(
+    //   `http://localhost:3000/api/blogs/?count=${count + 2}`
+    // );
     const d: Response = await fetch(
-      `http://localhost:3000/api/blogs/?count=${count + 2}`
+      `\\api\\blogs\\?count=${count + 2}`
     );
     setCount(count + 2);
     const data = await d.json();
