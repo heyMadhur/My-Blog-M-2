@@ -23,12 +23,12 @@ const Blog: React.FC<MyProps> = ({ allBlogs, totalBlogs }) => {
   const [count, setCount] = useState(allBlogs.length);
 
   const fetchMoreData = async () => {
-    // const d: Response = await fetch(
-    //   `http://localhost:3000/api/blogs/?count=${count + 2}`
-    // );
     const d: Response = await fetch(
-      `\\api\\blogs\\?count=${count + 2}`
+      `http://localhost:3000/api/blogs/?count=${count + 2}`
     );
+    // const d: Response = await fetch(
+    //   `\\api\\blogs\\?count=${count + 2}`
+    // );
     setCount(count + 2);
     const data = await d.json();
     setBlogs(data);
@@ -36,9 +36,9 @@ const Blog: React.FC<MyProps> = ({ allBlogs, totalBlogs }) => {
 
   return (
     <>
-    {/* <Head>
+    <Head>
       <title>Blogs</title>
-    </Head> */}
+    </Head>
       <div className={styles.blogs}>
         <h2 className={utilStyles.headFont}>Popular Blogs</h2>
 
