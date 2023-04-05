@@ -24,7 +24,7 @@ const Blog: React.FC<MyProps> = ({ allBlogs, totalBlogs }) => {
 
   const fetchMoreData = async () => {
     const d: Response = await fetch(
-      `http://localhost:3000/api/blogs/?count=${count + 2}`
+      `/api/blogs/?count=${count + 2}`
     );
     // const d: Response = await fetch(
     //   `\\api\\blogs\\?count=${count + 2}`

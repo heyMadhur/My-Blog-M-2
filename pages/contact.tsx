@@ -50,7 +50,7 @@ const Contact = () => {
       };
 
       // Send data to the backend via POST
-      fetch("http://localhost:3000/api/postcontact/", {
+      fetch("/api/postcontact/", {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(jsonData), // body data type must match "Content-Type" header
