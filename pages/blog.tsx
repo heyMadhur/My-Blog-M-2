@@ -30,8 +30,10 @@ const Blog: React.FC<MyProps> = ({ allBlogs, totalBlogs }) => {
     //   `\\api\\blogs\\?count=${count + 2}`
     // );
     setCount(count + 2);
+    console.log(count)
     const data = await d.json();
     setBlogs(data);
+    console.log(blogs)
   };
 
   return (

@@ -6,7 +6,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const allFilesData: string[] = [];
-  res.status(200).json("Request Recieved");
+  // res.status(200).json("Request Recieved");
 
   let data = await fs.promises.readdir(`blogdata`, "utf-8");
   data = data.slice(0, parseInt("" + req.query.count));
